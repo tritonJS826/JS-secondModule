@@ -43,28 +43,35 @@ input.addEventListener("keypress",function(keyPressed){
   if(keyPressed.which === 13){
     let now = new Date;
     let startToDo = new Date(inputDate.value);
-    /*now.getFullYear()+'.'+now.getMonth()+'.'+now.getDate()+' '+now.getHours()+
-    ':'+now.getMinutes()+':'+now.getSeconds();*/
-    //creating lists and span when enter is clicked
-    let li = document.createElement("li");
-    let spanElement = document.createElement("span");
-    let icon = document.createElement("i");
+    //let nowString = ((now.getMonth()+1)+" " + now.getDate() +" "+now.getFullYear());
+    if (this.value !=""  && startToDo > now) {
+      /*now.getFullYear()+'.'+now.getMonth()+'.'+now.getDate()+' '+now.getHours()+
+      ':'+now.getMinutes()+':'+now.getSeconds();*/
+      //creating lists and span when enter is clicked
+      let li = document.createElement("li");
+      let spanElement = document.createElement("span");
+      let icon = document.createElement("i");
 
-    let newTodo = this.value;
-    //this.value = " " ;
-    //icon.classList.add('fas', 'fa-trash-alt');
-    //spanElement.innerHTML=+icon;
+      let newTodo = this.value;
+      //this.value = " " ;
+      //icon.classList.add('fas', 'fa-trash-alt');
+      //spanElement.innerHTML=+icon;
 
-    //вешаем id на новый li
-    ul.innerHTML+='<li id="'+now+'">'+'<span><i class="fas fa-trash-alt"></i></span>'+
-    +newTodo+"  "+HowMuchTimeToEnd(now, startToDo)+'</li>';
+      //вешаем id на новый li
+      ul.innerHTML+='<li id="'+ "liIdVVV" +now+'">'+'<span><i class="fas fa-trash-alt"></i></span>'+
+      +newTodo+"  "+HowMuchTimeToEnd(now, startToDo)+'</li>';
 
-
-    rePrintDataInLi(now, startToDo,this.value);
-    deleteTodo();
-
+      rePrintDataInLi(now, startToDo,this.value);
+      deleteTodo();
+    } else {
+        if (startToDo < now){
+          alert("Неверно указана дата");
+        }
+        if (input.value == false  ) {
+            alert("Введите текст задания");
+        }
     }
-
+  }
 });
 
 //используются внешние переменные для разницы в отсчете
@@ -86,7 +93,8 @@ function rePrintDataInLi(now,startToDo,task){
   let tmin=today%60; today=Math.floor(today/60); if(tmin<10)tmin='0'+tmin;
   let thour=today%24; today=Math.floor(today/24);
   let timestr=today +" дней "+ thour+" часов "+tmin+" минут "+tsec+" секунд";
-  document.getElementById(now).innerHTML='<span><i class="fas fa-trash-alt"></i></span>'+
+  let liId = "liIdVVV" + now;
+  document.getElementById(liId).innerHTML='<span><i class="fas fa-trash-alt"></i></span>'+
   ''+task+" -- "+timestr;
   deleteTodo();
   window.setTimeout(rePrintDataInLi,1000,now,startToDo,task);
