@@ -146,6 +146,7 @@ button:hover {
     background: #f7f7f7;
     cursor: pointer;
     font-size: 20px;
+
 }
 .todos li:nth-child(2n){
     background:#edf1f5;
@@ -199,7 +200,7 @@ button:hover {
 .pageOfApp{
   display : flex;
   flex-flow: column;
-  max-width : 100vh;
+  width : 80%;
   position : relative;
   display:flex;
   flex-direction: column;
