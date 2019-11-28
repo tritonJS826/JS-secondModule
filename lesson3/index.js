@@ -227,6 +227,7 @@ arrBandits.push(bandit1);
 let bandit2 = new ProtoClassThief("Jimmy","Jake","MetalHead","Knife",20,7000,"Mogilev","red");
 arrBandits.push(bandit2);
 printInfo();
+
 //стартовая страница готова, теперь развесим листенеры
 //чтоб на кнопки можно было понажимать
 
