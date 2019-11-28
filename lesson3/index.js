@@ -42,8 +42,21 @@ function printDetailedInfo(){
   //отрисовывает на сайте детальную информацию о выбранном бандите в div detailedInfo
 }
 
-function printInfo() {
+function printInfo(arr) {//не сделано!!
   //отрисовывает на сайте общую информацию о всех бандитах в div info
+  let form = document.getElementById("info").getElementsByTagName("form");
+  form[0].innerHTML='<br>';
+  form[0].innerHTML+='ВЕРХНЯЯ СТРОЧКА ТАБЛИЦЫ В ВИДЕ HTML';
+  for (i=0;i++;i<arr.length) {
+    form[0].innerHTML+='CТРОЧКА ОБ ОДНОМ БАНДИТЕ';
+
+  }
+  form[0].innerHTML+='Оформление НИЗА СТРАНИЦЫ';
+  form[0].innerHTML+='<br>';
+  form[0].innerHTML+='Оформление НИЗА СТРАНИЦЫ'+
+  '<br>'+
+  '<input type="button" id="newBandit" value="Добавить нового бандита">';
+
 }
 
 function display(visibleId/*выбрать один из трех:"info", "detailedInfo", "createNew"*/) {
@@ -226,7 +239,7 @@ let bandit1 = new ProtoClassKiller("Billy","John","HardFist","Fists",32,5000,"Mi
 arrBandits.push(bandit1);
 let bandit2 = new ProtoClassThief("Jimmy","Jake","MetalHead","Knife",20,7000,"Mogilev","red");
 arrBandits.push(bandit2);
-printInfo();
+printInfo(arrBandits);
 
 //стартовая страница готова, теперь развесим листенеры
 //чтоб на кнопки можно было понажимать

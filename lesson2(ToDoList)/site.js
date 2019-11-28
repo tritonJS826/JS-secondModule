@@ -6,18 +6,18 @@ alert('ВНИМАНИЕ! \n'+
 ' тестовое задание) \n\n'+
 'обращаем внимание, что формат даты: mm dd yyyy');
 //selecting dom elements for manipulation
-var input = document.getElementById("input");
-var inputDate = document.getElementById("inputDate");
-var ul = document.getElementById("ul");
-var container = document.getElementById("todo");
-var lists = document.querySelectorAll("li");
-var spans = document.getElementsByTagName("span");
-var pencil = document.querySelector("#pencil");
-var saveBtn = document.querySelector(".save");
-var clearBtn = document.querySelector(".clear");
-var tipsBtn = document.querySelector(".tipBtn");
-var closeBtn = document.querySelector(".closeBtn");
-var overlay = document.getElementById("overlay")
+let input = document.getElementById("input");
+let inputDate = document.getElementById("inputDate");
+let ul = document.getElementById("ul");
+let container = document.getElementById("todo");
+let lists = document.querySelectorAll("li");
+let spans = document.getElementsByTagName("span");
+let pencil = document.querySelector("#pencil");
+let saveBtn = document.querySelector(".save");
+let clearBtn = document.querySelector(".clear");
+let tipsBtn = document.querySelector(".tipBtn");
+let closeBtn = document.querySelector(".closeBtn");
+let overlay = document.getElementById("overlay")
 
 
 //function to delete todo if delete span is clicked.

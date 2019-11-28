@@ -12,8 +12,8 @@
       @import url('index.css');
     </style>
   </head>
-  <body><!--для div с id задать display!!!!!!!!!!!!!!!!!!!!!!:none  и потом удалить этот комментарий)-->
-    <audio id="player" src="song.mp3" controls autoplay="autoplay"></audio>
+  <body>
+    <audio id="player"  src="songMainMenu.mp3"  autoplay="autoplay" loop></audio>
 
     <div id="info">
       <h2>Bandits</h2>
@@ -21,18 +21,17 @@
 
       <!--отрисовка таблицы с данными об объектах через JS. около каждого так же
       создается кнопка РЕДАКТИРОВАТЬ и УДАЛИТЬ-->
-      <input type="button" id="newBandit" value="Добавить нового бандита">
+      <input type="button" class="buttons" id="newBanditButton" value="Добавить нового бандита">
       </form>
     </div>
-
     <br>
 
     <div id="detailedInfo">
       <h2>Окно детальной информации</h2>
       <form>
+        asdksd;lsdm<input type="button">
       </form>
     </div>
-
     <br>
 
     <div id="createNew">
@@ -49,8 +48,8 @@
       <span>Награда:</span><input type="text" id="textAward"><br><br>
       <span>Местоположение:</span><input type="text" id="textLocation"><br><br>
       <span>Уровень опасности:</span><input type="text" id="danger"><br><br>
-      <input type="button" value="Оповестить других шерифов!">
-      <input type="button" value="Главное меню">
+      <input type="button" class="buttons" value="Оповестить других шерифов!">
+      <input type="button" class="buttons" value="Главное меню">
       </form>
     </div>
 
