@@ -58,7 +58,7 @@ input.addEventListener("keypress",function(keyPressed){
       //spanElement.innerHTML=+icon;
 
       //вешаем id на новый li
-      ul.innerHTML+='<li id="'+ "liIdVVV" +now+'">'+'<span><i class="fas fa-trash-alt"></i></span>'+
+      ul.innerHTML+='<li id="'+ "specialLiId" +now+'">'+'<span><i class="fas fa-trash-alt"></i></span>'+
       +newTodo+"  "+HowMuchTimeToEnd(now, startToDo)+'</li>';
 
       rePrintDataInLi(now, startToDo,this.value);
@@ -93,7 +93,7 @@ function rePrintDataInLi(now,startToDo,task){
   let tmin=today%60; today=Math.floor(today/60); if(tmin<10)tmin='0'+tmin;
   let thour=today%24; today=Math.floor(today/24);
   let timestr=today +" дней "+ thour+" часов "+tmin+" минут "+tsec+" секунд";
-  let liId = "liIdVVV" + now;
+  let liId = "specialLiId" + now;
   document.getElementById(liId).innerHTML='<span><i class="fas fa-trash-alt"></i></span>'+
   ''+task+" -- "+timestr;
   deleteTodo();
