@@ -18,31 +18,20 @@
     <div id="info">
       <h2>Bandits</h2>
       <form>
-        <div class="divGorizontal">
+        <!--отрисовка таблицы с данными об объектах через JS. около каждого так же
+        создается кнопка РЕДАКТИРОВАТЬ и УДАЛИТЬ-->
+      <!--  <div class="divGorizontal">
           <div class="divGorizontalElem strong">Имя</div>
           <div class="divGorizontalElem strong">Фамилия</div>
           <div class="divGorizontalElem strong">Возраст</div>
           <div class="divGorizontalElem strong">Оружие</div>
           <div class="divGorizontalElem strong">Локация</div>
         </div>
-        <div class="divGorizontal">
-          <div class="divGorizontalElem">${firstName}</div>
-          <div class="divGorizontalElem">${secondName}</div>
-          <div class="divGorizontalElem">${Age}</div>
-          <div class="divGorizontalElem">${weapon}</div>
-          <div class="divGorizontalElem">${location}</div>
-        </div>
-        <div class="divGorizontal">
-          <div class="divGorizontalElem">123</div>
-          <div class="divGorizontalElem">123</div>
-          <div class="divGorizontalElem">123</div>
-          <div class="divGorizontalElem">123</div>
-          <div class="divGorizontalElem">123</div>
-        </div>
+      -->
+
 
       <!--отрисовка таблицы с данными об объектах через JS. около каждого так же
       создается кнопка РЕДАКТИРОВАТЬ и УДАЛИТЬ-->
-      <input type="button" class="buttons" id="newBanditButton" value="Добавить нового бандита">
       </form>
     </div>
     <br>
@@ -50,7 +39,7 @@
     <div id="detailedInfo">
       <h2>Окно детальной информации</h2>
       <form>
-        asdksd;lsdm<input type="button">
+        <input type="button" class="buttons" id="mainMenu2" value="Главное меню">
       </form>
     </div>
     <br>
@@ -58,19 +47,19 @@
     <div id="createNew">
       <h2>Окно создания</h2>
       <form>
-      <input type="radio" id="review_type1" checked>Киллер<br>
-      <input type="radio" id="review_type1" checked>Вор<br><br>
+      <input type="radio" id="radioKiller" name="banditType" value="killer" >Киллер<br><br>
+      <input type="radio" id="radioThief" name="banditType" value="thief">Вор<br><br>
 
-      <span>Имя:</span><input type="text" id="textFirstName"><br><br>
-      <span>Фамилия:</span><input type="text" id="textSecondName"><br><br>
-      <span>Погоняло:</span><input type="text" id="textNickName"><br><br>
-      <span>Оружие:</span><input type="text" id="textWeapon"><br><br>
-      <span>Возраст:</span><input type="text" id="texAge"><br><br>
-      <span>Награда:</span><input type="text" id="textAward"><br><br>
-      <span>Местоположение:</span><input type="text" id="textLocation"><br><br>
-      <span>Уровень опасности:</span><input type="text" id="danger"><br><br>
-      <input type="button" class="buttons" value="Оповестить других шерифов!">
-      <input type="button" class="buttons" value="Главное меню">
+      <span>Имя:</span><input type="text" id="textFirstName" value=""><br><br>
+      <span>Фамилия:</span><input type="text" id="textSecondName" value=""><br><br>
+      <span>Погоняло:</span><input type="text" id="textNickName" value=""><br><br>
+      <span>Оружие:</span><input type="text" id="textWeapon" value=""><br><br>
+      <span>Возраст:</span><input type="text" id="textAge" value=""><br><br>
+      <span>Награда:</span><input type="text" id="textAward" value=""><br><br>
+      <span>Местоположение:</span><input type="text" id="textLocation" value=""><br><br>
+      <span>Уровень опасности:</span><input type="text" id="textDanger" value=""><br><br>
+      <input type="button" id="createBandit" class="buttons" value="Оповестить других шерифов!">
+      <input type="button" id="mainMenu"class="buttons" value="Главное меню">
       </form>
     </div>
 
