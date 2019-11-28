@@ -12,7 +12,7 @@
       @import url('index.css');
     </style>
   </head>
-  <body>
+  <body><!--для div с id задать display!!!!!!!!!!!!!!!!!!!!!!:none  и потом удалить этот комментарий)-->
     <div id="info">
       <h2>Главное меню</h2>
       <form>
@@ -36,8 +36,10 @@
 
     <div id="createNew">
       <h2>Окно создания</h2>
-      <!--спросить промптом это убийца или вор для создания нужного класса-->
       <form>
+      <input type="radio" id="review_type1" checked>Киллер<br>
+      <input type="radio" id="review_type1" checked>Вор<br><br>
+
       <span>Имя:</span><input type="text" id="textFirstName"><br><br>
       <span>Фамилия:</span><input type="text" id="textSecondName"><br><br>
       <span>Погоняло:</span><input type="text" id="textNickName"><br><br>
