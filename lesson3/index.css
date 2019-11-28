@@ -16,14 +16,14 @@ body {
   display : flex;
   flex-direction : column;
   background-color : white;
-  opacity : 0.7;
+  opacity : 0.8;
   border : 3px solid brown;
   padding : 10px;
   justify-content : center;
   align-content: center;
   text-align : center;
   color : brown;
-  font-family : "kirsty";
+
 }
 
 #detailedInfo {
@@ -32,12 +32,13 @@ body {
   flex-direction : column;
   background-color : white;
   opacity : 0.7;
-  border : 3px solid gold;
+  border : 3px solid brown;
+  color : brown;
   padding : 10px;
   justify-content : center;
   align-content: center;
   text-align : center;
-  font-family : "kirsty";
+
 }
 
 #createNew {
@@ -46,16 +47,16 @@ body {
   flex-direction : column;
   background-color : white;
   opacity : 0.7;
-  border : 3px solid darkred;
+  border : 3px solid brown;
   padding : 10px;
   justify-content : center;
   align-content: center;
   text-align : center;
-  color : darkred;
-  font-family : Arial; /* почему-то не рабоает */
+  color : brown;
+
 }
 
-#newBandit {
+.buttons {
   border: 2px; /* почему-то не рабоает */
   border-color: brown;
   color : brown;
@@ -63,18 +64,40 @@ body {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
+  font-size: 20px;
   border-radius:4px;
   cursor: pointer;
   opacity : 1;
 }
 
-#newBandit:hover {
+.buttons:hover {
   background-color : brown;
   color : white;
   border : 2px;
   border-color : brown;
 }
+
+
+.divGorizontal {
+  width : 100%;
+  display : flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items : flex-start;
+  color :blue;
+  border : 2px solid brown;
+}
+
+.divGorizontalElem {
+  width : 25%;
+  display : flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items : center;
+  color :blue;
+  margin : 3px;
+}
+
 
 @media (max-width: 900px) {
 /*для мобил*/
@@ -102,8 +125,3 @@ body {
 #createNew {
   width : 100%;
 }
-
-#newBandit {
-  display : block;
-  position : fixed;
-  bottom : 0;
