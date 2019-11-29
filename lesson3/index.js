@@ -15,45 +15,61 @@ function information() {
   'для полного удаления информации о нем. \n\n');
 }
 
-function createNewBandit(arrBandits) {
-  //возвращает объект-бандит созданный в div id ="createNew"
-  //let type = document.getElementById(?????????????).value;
-  let firstName = document.getElementById("textFirstName").value;
-  let secondName = document.getElementById("textSecondName").value;
-  let nickName = document.getElementById("textNickName").value;
-  let weapon = document.getElementById("textWeapon").value;
-  let age = document.getElementById("textAge").value;
-  let award = document.getElementById("textAward").value;
-  let location =document.getElementById("textLocation").value;
-  let danger =document.getElementById("textDanger").value;
-
-  document.getElementById("mainMenu").addEventListener("click",function() {
-    display("info");
-  });
-  document.getElementById("createBandit").addEventListener("click", function() {
-    printInfo(arrBandits);
-    display("info");
-    alert("Теперь о новом подлеце узнают другие шерифы");
-  });
-
-}
 
 function editBandit(i){
   //редактирует данные о выбранном бандите
-  alert("edit this bandit " +i);
+  display("createNew");
+  document.getElementById("textFirstName").value=  arrBandits[i].firstName;
+  document.getElementById("textSecondName").value=  arrBandits[i].secondName;
+  document.getElementById("textNickName").value=  arrBandits[i].nickName;
+  document.getElementById("textWeapon").value=arrBandits[i].weapon;
+  document.getElementById("textAge").value=arrBandits[i].age;
+  document.getElementById("textAward").value=  arrBandits[i].award;
+  document.getElementById("textLocation").value=arrBandits[i].location;
+  document.getElementById("textDanger").value=arrBandits[i].danger;
+  deleteBandit(i,arrBandits);
+  document.getElementById("mainMenu").style.display="none";
+
 }
 
 function deleteBandit(i,arrBandits) {
   //удаляет информацию о выбранном бандите в массиве и с сайта
-  alert("delete this bandit "+ i);
   arrBandits.splice(i,1);
   printInfo(arrBandits);
-  display("info");
+
 
 }
 
 function printDetailedInfo(i){
   //отрисовывает на сайте детальную информацию о выбранном бандите в div detailedInfo
+  let form = document.getElementById("detailedInfo").getElementsByTagName("form");
+  form[0].innerHTML='<br>';
+  form[0].innerHTML+='<div class="detailInfo">'+
+      '<div class="details">'+
+        '<div class="elem">Имя</div>'+
+        '<div class="elem">Фамилия</div>'+
+        '<div class="elem">Кличка</div>'+
+        '<div class="elem">Оружие</div>'+
+        '<div class="elem">Возраст</div>'+
+        '<div class="elem">Награда</div>'+
+        '<div class="elem">Локация</div>'+
+        '<div class="elem">Уровень опасности</div>'+
+        '<div class="elem">Тип</div>'+
+      '</div>'+
+      '<div class="details">'+
+        '<div class="elem">'+arrBandits[i].firstName+'</div>'+
+        '<div class="elem">'+arrBandits[i].secondName+'</div>'+
+        '<div class="elem">'+arrBandits[i].nickName+'</div>'+
+        '<div class="elem">'+arrBandits[i].weapon+'</div>'+
+        '<div class="elem">'+arrBandits[i].age+'</div>'+
+        '<div class="elem">'+arrBandits[i].award+'</div>'+
+        '<div class="elem">'+arrBandits[i].location+'</div>'+
+        '<div class="elem">'+arrBandits[i].danger+'</div>'+
+        '<div class="elem">'+arrBandits[i].type+'</div>'+
+      '</div>'+
+    '</div><br>'+
+    '<input type="button" class="buttons" id="mainMenu2" value="Главное меню">';
+
   document.getElementById("mainMenu2").addEventListener("click",function() {
     display("info");
   });
@@ -87,9 +103,8 @@ function printInfo(arrBandits) {
       '<div class="divGorizontalElem " id="remove'+i+'">Удалить</div>'+
       '</div>';
   }
-  form[0].innerHTML+='<br>';
   form[0].innerHTML+='<br>'+
-  '<input type="button" id="newBanditButton" value="Добавить нового бандита">';
+  '<input type="button" id="newBanditButton" class="buttons" value="Добавить нового бандита">';
 
   //навесим листенеры
 
@@ -107,15 +122,21 @@ function printInfo(arrBandits) {
     });
 
     document.getElementById(edit).addEventListener("click",function(){
-      editBandit(i,arrBandits);
+      editBandit(i);
     });
     document.getElementById(remove).addEventListener("click",function(){
-      deleteBandit(i,arrBandits);
+      if (confirm("Вы уверены, что хотите удалить инофрмацию о " +
+      arrBandits[i].firstName + " " +arrBandits[i].secondName+"?")) {
+          deleteBandit(i,arrBandits);
+      } else {
+
+      }
+
     });
   }
   document.getElementById("newBanditButton").addEventListener("click",function(){
-    createNewBandit(arrBandits);
     display("createNew");
+    document.getElementById("createBandit").style.display="";
   })
 }
 
@@ -286,6 +307,15 @@ class ProtoClassThief extends BaseClassBandit {
   }
 
 }
+//в меню создания проверим какой radio выбран и вернем его value
+function checkRadio() {
+    var radio=document.getElementsByName('radioBanditType');
+    for (var i=0;i<radio.length; i++) {
+        if (radio[i].checked) {
+            return(radio[i].value);
+        }
+    }
+}
 
 let arrBandits = []; // будем сюда бандитов сохранять
 
@@ -308,14 +338,51 @@ printInfo(arrBandits);
 
 
 
+
 //стартовая страница готова, теперь развесим листенеры
 //чтоб на кнопки можно было понажимать
 
 
-/*listeners
-  при нажатии на имя бандита (высвечивание детальной информации)
-  при нажатии на кнопку редактировать
-  при нажатии на кнопку удалить
-  при нажатии на кнопку главное меню (высвечивание общей информации)
-  при нажатии на кнопку редактировать (высвечивание меню редактирования)
-*/
+/*listeners*/
+//окончательное создание нового бандита и добавление его на главное меню с выхлдом
+//на главное меню
+document.getElementById("createBandit").addEventListener("click", function() {
+  document.getElementById("mainMenu").style.display="";
+
+
+
+  let firstName = document.getElementById("textFirstName").value;
+  let secondName = document.getElementById("textSecondName").value;
+  let nickName = document.getElementById("textNickName").value;
+  let weapon = document.getElementById("textWeapon").value;
+  let age = document.getElementById("textAge").value;
+  let award = document.getElementById("textAward").value;
+  let location =document.getElementById("textLocation").value;
+  let danger =document.getElementById("textDanger").value;
+  let type = checkRadio();
+  switch (type) {
+    case "killer":
+      arrBandits[arrBandits.length] = new ProtoClassKiller(firstName,secondName,nickName,weapon,age,award,location,danger);
+      printInfo(arrBandits);
+      display("info");
+      alert("Теперь о подлеце узнают другие шерифы");
+    break;
+    case "thief":
+      arrBandits[arrBandits.length] = new ProtoClassThief(firstName,secondName,nickName,weapon,age,award,location,danger);
+      printInfo(arrBandits);
+      display("info");
+      alert("Теперь о подлеце узнают другие шерифы");
+      break;
+    default :
+      arrBandits[arrBandits.length] = new ProtoClassThief(firstName,secondName,nickName,weapon,age,award,location,danger,type);
+      printInfo(arrBandits);
+      display("info");
+      alert("Теперь о подлеце узнают другие шерифы");
+
+  }
+
+});
+
+document.getElementById("mainMenu").addEventListener("click",function() {
+  display("info");
+});

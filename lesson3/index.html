@@ -7,7 +7,7 @@
     <title>Homework3JSModule2</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700|Source+Sans+Pro:300,400&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap" rel="stylesheet">
     <style>
       @import url('index.css');
     </style>
@@ -37,27 +37,45 @@
     <br>
 
     <div id="detailedInfo">
-      <h2>Окно детальной информации</h2>
+      <h2>Detailed info</h2>
       <form>
-        <input type="button" class="buttons" id="mainMenu2" value="Главное меню">
+        <!--<div class="detailInfo">
+          <div class="details">
+            <div class="elem">Имя</div>
+            <div class="elem">Кличка</div>
+            <div class="elem">Возраст</div>
+            <div class="elem">Оружие</div>
+            <div class="elem">Локация</div>
+          </div>
+          <div class="details">
+            <div class="elem">aa</div>
+            <div class="elem">12aaaaa3</div>
+            <div class="elem">12aaaa a 3</div>
+            <div class="elem">aa</div>
+            <div class="elem">aa</div>
+          </div>
+        </div>
+        <input type="button" class="buttons" id="mainMenu2" value="Главное меню">-->
       </form>
     </div>
     <br>
 
     <div id="createNew">
-      <h2>Окно создания</h2>
+      <h2>Edit info</h2>
       <form>
-      <input type="radio" id="radioKiller" name="banditType" value="killer" >Киллер<br><br>
-      <input type="radio" id="radioThief" name="banditType" value="thief">Вор<br><br>
-
-      <span>Имя:</span><input type="text" id="textFirstName" value=""><br><br>
-      <span>Фамилия:</span><input type="text" id="textSecondName" value=""><br><br>
-      <span>Погоняло:</span><input type="text" id="textNickName" value=""><br><br>
-      <span>Оружие:</span><input type="text" id="textWeapon" value=""><br><br>
-      <span>Возраст:</span><input type="text" id="textAge" value=""><br><br>
-      <span>Награда:</span><input type="text" id="textAward" value=""><br><br>
-      <span>Местоположение:</span><input type="text" id="textLocation" value=""><br><br>
-      <span>Уровень опасности:</span><input type="text" id="textDanger" value=""><br><br>
+        <div class="divRadio">
+          <div><input type="radio" id="radioKiller" name="radioBanditType" value="killer" >Киллер</div>
+          <div><input type="radio" id="radioThief" name="radioBanditType" value="thief">Вор</div>
+        </div>
+        <br>
+      <span>Имя:</span><input type="text" id="textFirstName" value="Victor" required><br><br>
+      <span>Фамилия:</span><input type="text" id="textSecondName" value="Veretennikov"><br><br>
+      <span>Погоняло:</span><input type="text" id="textNickName" value="triton"><br><br>
+      <span>Оружие:</span><input type="text" id="textWeapon" value="Shotgun"><br><br>
+      <span>Возраст:</span><input type="number" id="textAge" value="25" required><br><br>
+      <span>Награда:</span><input type="number" id="textAward" value="1000000" required><br><br>
+      <span>Местоположение:</span><input type="text" id="textLocation" value="Minsk"><br><br>
+      <span>Уровень опасности:</span><input type="text" id="textDanger" value="SUPERMEGADANGER"><br><br>
       <input type="button" id="createBandit" class="buttons" value="Оповестить других шерифов!">
       <input type="button" id="mainMenu"class="buttons" value="Главное меню">
       </form>
