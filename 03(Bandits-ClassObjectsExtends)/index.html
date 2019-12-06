@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- подключены бутстрап иконки шрифты -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Homework3JSModule2</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Inline&display=swap" rel="stylesheet">
+    <style>
+      @import url('index.css');
+    </style>
+  </head>
+  <body>
+    <audio id="player"  src="songMainMenu.mp3"  autoplay="autoplay" loop></audio>
+
+    <div id="info">
+      <h2>Bandits</h2>
+      <form>
+        <!--отрисовка таблицы с данными об объектах через JS. около каждого так же
+        создается кнопка РЕДАКТИРОВАТЬ и УДАЛИТЬ-->
+      <!--  <div class="divGorizontal">
+          <div class="divGorizontalElem strong">Имя</div>
+          <div class="divGorizontalElem strong">Фамилия</div>
+          <div class="divGorizontalElem strong">Возраст</div>
+          <div class="divGorizontalElem strong">Оружие</div>
+          <div class="divGorizontalElem strong">Локация</div>
+        </div>
+      -->
+
+
+      <!--отрисовка таблицы с данными об объектах через JS. около каждого так же
+      создается кнопка РЕДАКТИРОВАТЬ и УДАЛИТЬ-->
+      </form>
+    </div>
+    <br>
+
+    <div id="detailedInfo">
+      <h2>Detailed info</h2>
+      <form>
+        <!--<div class="detailInfo">
+          <div class="details">
+            <div class="elem">Имя</div>
+            <div class="elem">Кличка</div>
+            <div class="elem">Возраст</div>
+            <div class="elem">Оружие</div>
+            <div class="elem">Локация</div>
+          </div>
+          <div class="details">
+            <div class="elem">aa</div>
+            <div class="elem">12aaaaa3</div>
+            <div class="elem">12aaaa a 3</div>
+            <div class="elem">aa</div>
+            <div class="elem">aa</div>
+          </div>
+        </div>
+        <input type="button" class="buttons" id="mainMenu2" value="Главное меню">-->
+      </form>
+    </div>
+    <br>
+
+    <div id="createNew">
+      <h2>Edit info</h2>
+      <form>
+        <div class="divRadio">
+          <div><input type="radio" id="radioKiller" name="radioBanditType" value="killer" >Киллер</div>
+          <div><input type="radio" id="radioThief" name="radioBanditType" value="thief">Вор</div>
+        </div>
+        <br>
+      <span>Имя:</span><input type="text" id="textFirstName" value="Victor" required><br><br>
+      <span>Фамилия:</span><input type="text" id="textSecondName" value="Veretennikov"><br><br>
+      <span>Погоняло:</span><input type="text" id="textNickName" value="triton"><br><br>
+      <span>Оружие:</span><input type="text" id="textWeapon" value="Shotgun"><br><br>
+      <span>Возраст:</span><input type="number" id="textAge" value="25" required><br><br>
+      <span>Награда:</span><input type="number" id="textAward" value="1000000" required><br><br>
+      <span>Местоположение:</span><input type="text" id="textLocation" value="Minsk"><br><br>
+      <span>Уровень опасности:</span><input type="text" id="textDanger" value="SUPERMEGADANGER"><br><br>
+      <input type="button" id="createBandit" class="buttons" value="Оповестить других шерифов!">
+      <input type="button" id="mainMenu"class="buttons" value="Главное меню">
+      </form>
+    </div>
+
+    <script src="index.js"></script>
+
+    <!--<i class="fas fa-desktop"></i>
+    <script src="site.js"></script>-->
+    <!--BootstrapConnect-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
