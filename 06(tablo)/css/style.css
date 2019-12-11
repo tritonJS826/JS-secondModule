@@ -1,0 +1,28 @@
+header {
+	text-align: center;
+}
+
+body {
+	background-image: url("bg.jpeg");
+	background-size: 100%;
+}
+
+.routeParent {
+	display: flex;
+	flex-direction: row;
+	align-items : flex-start;
+	justify-content: space-around;
+	max-width: 98%;
+	color:black;
+}
+
+.route {
+	align-items: center;
+	justify-content: space-around;
+	color:rgba(255, 255, 255,1);
+	max-width: 15%;
+	min-width: 15%;
+	font-size: 15pt;
+	text-shadow: 2px 2px black;
+
+}

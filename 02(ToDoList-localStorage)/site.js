@@ -17,7 +17,7 @@ let saveBtn = document.querySelector(".save");
 let clearBtn = document.querySelector(".clear");
 let tipsBtn = document.querySelector(".tipBtn");
 let closeBtn = document.querySelector(".closeBtn");
-let overlay = document.getElementById("overlay")
+let overlay = document.getElementById("overlay");
 
 
 //function to delete todo if delete span is clicked.
