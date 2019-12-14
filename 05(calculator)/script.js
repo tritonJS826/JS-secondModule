@@ -118,7 +118,7 @@ function handleOperator(nextOperator) {
 
       const currentValue = firstOperand || 0;
       let result = allCalculation[operator](currentValue, inputValue);
-       if (result=='Infinity') {result = "u can't devide by 0";}
+       if (result=='Infinity') {result = "error";}
       //ВЫВОДИМ ИСТОРИЮ
       calculator.history.hist[calculator.history.hist.length]="operation"+(calculator.history.hist.length-1)+' : '+currentValue +calculator.operator+  inputValue +"=" +result;
       document.querySelector('.divHistory').innerHTML =calculator.history.hist[calculator.history.hist.length-1]+'<br>'+ calculator.history.hist[calculator.history.hist.length-2]+'<br>' + calculator.history.hist[calculator.history.hist.length-3];
