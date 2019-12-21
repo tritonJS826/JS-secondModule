@@ -1,0 +1,47 @@
+const http = require('http');
+const fs = require('fs');
+
+// сервер который просто подгружает три статичных файла
+
+
+let html = fs.readFileSync("app.html", "utf8", function(error,data){
+  console.log("AsyncReadingHTML");
+  if(error) throw error; // если возникла ошибка
+  console.log("data: "+ data);  // выводим считанные данные
+  return data;
+});
+let css = fs.readFileSync("app.css", "utf8", function(error,data){
+  console.log("AsyncReadingCSS");
+  if(error) throw error; // если возникла ошибка
+  console.log("data: "+ data);  // выводим считанные данные
+  return data;
+});
+let js = fs.readFileSync("app.js", "utf8", function(error,data){
+  console.log("AsyncReadingJS");
+  if(error) throw error; // если возникла ошибка
+  console.log("data: "+ data);  // выводим считанные данные
+  return data;
+});
+
+
+
+http.createServer((req, res) => {
+  console.log(req.url);
+  switch (req.url) {
+    case  '/':
+      res.writeHead(200, {'Content-Type': 'text/html'});
+      res.end(html);
+      //break;
+    case '/app.css':
+      res.writeHead(200, {'Content-Type': 'text/css'});
+      res.end(css);
+      //break;
+    case '/app.js':
+      res.writeHead(200, {'Content-Type': 'text/javascript'});
+      res.end(js);
+      //break;
+    default:
+    res.writeHead(200, {'Content-Type': 'text/plain'})
+    res.end('404 Не найдено');
+  }
+}).listen(3000, () => console.log('Server is running') );
