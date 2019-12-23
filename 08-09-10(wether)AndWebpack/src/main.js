@@ -1,7 +1,7 @@
 import {getAndPaintWether} from './scripts/apiRequests/weather.js';
 import  {tablo, Route } from './scripts/tabloAndClasses.js';
 import {drawTabloManagementButtons, tabloManagementListeners} from './scripts/tabloManagement.js'
-
+import {changeBackgroundViaApi} from './scripts/apiRequests/changeBackground'
 
 
 
@@ -40,4 +40,5 @@ import {drawTabloManagementButtons, tabloManagementListeners} from './scripts/ta
 
   document.getElementById("destination").addEventListener("keyup", function (){
     getAndPaintWether(document.getElementById("destination").value);
+    changeBackgroundViaApi(document.getElementById("destination").value);
         });
