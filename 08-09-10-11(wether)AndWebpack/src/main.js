@@ -1,8 +1,8 @@
 import {getAndPaintWether} from './scripts/apiRequests/weather.js';
 import  {tablo, Route } from './scripts/tabloAndClasses.js';
-import {drawTabloManagementButtons, tabloManagementListeners} from './scripts/tabloManagement.js'
-import {changeBackgroundViaApi} from './scripts/apiRequests/changeBackground'
-
+import {drawTabloManagementButtons, tabloManagementListeners} from './scripts/tabloManagement.js';
+import {changeBackgroundViaApi} from './scripts/apiRequests/changeBackground';
+import {printHint} from './scripts/apiRequests/printHint.js';
 
 
   //Дальше сама суть программы
@@ -27,7 +27,7 @@ import {changeBackgroundViaApi} from './scripts/apiRequests/changeBackground'
   tablo.addListenersOnFavBtn();
 
   //навешиваем всякие листенеры
-  document.getElementById('btnUploadArrayInStorage').addEventListener("click", tablo.uploadArrayInStorage)
+  document.getElementById('btnUploadArrayInStorage').addEventListener("click", tablo.uploadArrayInStorage);
   document.getElementById('btnNewRoute').addEventListener("click", function(){
     tablo.addNewRoute(tablo.dataArray);
     tablo.drawer(tablo.tabloView(tablo.dataArray), 'divTabloView');
@@ -41,4 +41,5 @@ import {changeBackgroundViaApi} from './scripts/apiRequests/changeBackground'
   document.getElementById("destination").addEventListener("keyup", function (){
     getAndPaintWether(document.getElementById("destination").value);
     changeBackgroundViaApi(document.getElementById("destination").value);
-        });
+    printHint();
+  });

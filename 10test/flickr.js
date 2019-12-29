@@ -8,7 +8,7 @@ document.querySelector('head').appendChild(script);
 
 }
 
-function jsonFlickrFeed(data) {
+function jsonFlickrFeed(data) {{
 
 var image = "";
 

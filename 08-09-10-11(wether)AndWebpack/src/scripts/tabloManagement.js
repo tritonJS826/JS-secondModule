@@ -19,18 +19,17 @@ export function drawTabloManagementButtons(){
   min-height : 20%;
   align-self : flex-start;
   margin-top: 10px;
-  //flex:0 0 15%;`
-  console.log('drawTabloManagementButtons Complete')
+  //flex:0 0 15%;`;
+  console.log('drawTabloManagementButtons Complete');
 }
 
 export function tabloManagementListeners(){
   let buttons = document.querySelectorAll('.tabloManagement');
   buttons.forEach (elem => elem.addEventListener('click',(event) => {
     const {
-        target
+        target,
     } = event;
     let date = new Date;
-    let elemDate;
     let workingArr=[];
      switch (target.name) {
       case 'mainTablo':
@@ -45,7 +44,8 @@ export function tabloManagementListeners(){
           if (new Date(`${elem._date}T${elem._departureTime}`) > date) {
           // console.log(elem.data);
           workingArr.push(elem);
-        }});
+        }
+});
         tablo.drawer(tablo.tabloView(workingArr), 'divTabloView');
         tablo.addListenersOnDelBtn();
         tablo.addListenersOnFavBtn();
@@ -57,17 +57,20 @@ export function tabloManagementListeners(){
           if (new Date(`${elem._date}T${elem._departureTime}`) < date) {
           // console.log(elem.data);
           workingArr.push(elem);
-        }});
+        }
+});
         tablo.drawer(tablo.tabloView(workingArr), 'divTabloView');
         tablo.addListenersOnDelBtn();
         tablo.addListenersOnFavBtn();
         break;
       case 'favourite':
         //console.log(tablo.dataArray[0]['_favorite']);
-        tablo.dataArray.forEach(elem => {if (elem['_favorite']) {
+        tablo.dataArray.forEach(elem => {
+if (elem['_favorite']) {
           workingArr.push(elem);
           //console.log(workingArr);
-      }});
+      }
+});
         tablo.drawer(tablo.tabloView(workingArr), 'divTabloView');
         tablo.addListenersOnDelBtn();
         tablo.addListenersOnFavBtn();
@@ -77,5 +80,5 @@ export function tabloManagementListeners(){
      }
 
   })
- )
+);
 }

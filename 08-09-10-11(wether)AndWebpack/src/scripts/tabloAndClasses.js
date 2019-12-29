@@ -45,7 +45,7 @@ export let tablo = {
           <!--<div class="route"> favorite:${arr[i]._favorite}</div>-->
           <div class="route"><button id="delBtn${i}">delete</button></div>
           <div class="route"><button id="favBtn${i}"> ${arr[i]._favorite}</div>
-        </div>`
+        </div>`;
     }
     return resultString; // то что вывудем в поля таблицы
   },
@@ -73,14 +73,14 @@ export let tablo = {
   },// сохраняет  dataArray in  localstorage
 
   'addNewRoute': () => {
-    newRoute=document.getElementById("newRoute").value;
-    transportationType=document.getElementById("transportationType").value;
-    date=document.getElementById("date").value;
-    destination=document.getElementById("destination").value;
-    departureTime=document.getElementById("departureTime").value;
-    arrivalTime=document.getElementById("arrivalTime").value;
-    cost=document.getElementById("cost").value;
-    tablo.dataArray[tablo.dataArray.length] = new Route(newRoute, transportationType, date, destination, departureTime, arrivalTime, cost,true)
+    let newRoute=document.getElementById("newRoute").value;
+    let transportationType=document.getElementById("transportationType").value;
+    let date=document.getElementById("date").value;
+    let destination=document.getElementById("destination").value;
+    let departureTime=document.getElementById("departureTime").value;
+    let arrivalTime=document.getElementById("arrivalTime").value;
+    let cost=document.getElementById("cost").value;
+    tablo.dataArray[tablo.dataArray.length] = new Route(newRoute, transportationType, date, destination, departureTime, arrivalTime, cost,true);
     if (!(newRoute && transportationType && date && destination && departureTime && arrivalTime && cost )) {
       tablo.dataArray.splice([tablo.dataArray.length-1],1);
     }
@@ -101,7 +101,7 @@ export let tablo = {
       tablo.dataArray[i]._favorite=false;
     } else {
       tablo.dataArray[i]._favorite=true;
-    };
+    }
     tablo.drawer(tablo.tabloView(tablo.dataArray), 'divTabloView');
     tablo.addListenersOnDelBtn();
     tablo.addListenersOnFavBtn();
@@ -110,16 +110,20 @@ export let tablo = {
 
   'addListenersOnDelBtn':() => {
       for (let i=0;i<tablo.dataArray.length;i++){
-        document.getElementById("delBtn"+i).addEventListener("click", function (){tablo.removeRoute(i)});
+        document.getElementById("delBtn"+i).addEventListener("click", function (){
+tablo.removeRoute(i);
+});
       }
   },
 
   'addListenersOnFavBtn':()=>{
     for (let i=0;i<tablo.dataArray.length;i++){
-      document.getElementById("favBtn"+i).addEventListener("click", function () {tablo.favoriteRoute(i)});
+      document.getElementById("favBtn"+i).addEventListener("click", function () {
+tablo.favoriteRoute(i);
+});
     }
-  }
-}
+  },
+};
 
 
 

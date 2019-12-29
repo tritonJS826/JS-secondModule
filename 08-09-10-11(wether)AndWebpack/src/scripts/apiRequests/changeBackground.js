@@ -18,17 +18,8 @@ export async function changeBackgroundViaApi (destinationText) {
        //alert(JSON.stringify(j));
        //console.log(j.photos.photo[1]);
        console.log('APIChangeBackgroundIsRuning');
-       var srcPath = 'https://farm'+j.photos.photo[1].farm+'.staticflickr.com/'+j.photos.photo[1].server+'/'+j.photos.photo[1].id+'_'+j.photos.photo[1].secret+'.jpg';
-       document.querySelector('body').style.background = `url(${srcPath})`;
+       var srcPhotoPath = 'https://farm'+j.photos.photo[1].farm+'.staticflickr.com/'+j.photos.photo[1].server+'/'+j.photos.photo[1].id+'_'+j.photos.photo[1].secret+'.jpg';
+       document.getElementById('divPictures').style.backgroundImage = `url(${srcPhotoPath})`;
      })
        //let picture = j.photos.photo.map((pic) => {}
-
-
-
-
-
-
-
-
-
 }
