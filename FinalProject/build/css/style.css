@@ -1,0 +1,13 @@
+#mainBlock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+body {
+  max-width: 1440px;
+  /*background-image: url();*/
+  background-size: 100%;
+  background-color:red;
+}

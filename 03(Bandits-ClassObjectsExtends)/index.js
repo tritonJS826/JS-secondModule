@@ -166,7 +166,7 @@ function display(visibleId/*выбрать один из трех:"info", "detai
 
 class BaseClassBandit {
   constructor(firstName,secondName,nickName,weapon,age,award) {
-	   this.firstName= firstName;
+     this.firstName= firstName;
      this.secondName = secondName;
      this.nickName = nickName;
      this.weapon = weapon;
